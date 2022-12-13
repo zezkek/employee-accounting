@@ -5,14 +5,9 @@ using System.Data.SqlClient;
 
 namespace employee_accounting.Models.db;
 
-public partial class WorkersContext : DbContext
+public partial class AppDbContext : DbContext
 {
-    public WorkersContext()
-    {
-    }
-
-    public WorkersContext(DbContextOptions<WorkersContext> options)
-        : base(options)
+    public AppDbContext()
     {
     }
 

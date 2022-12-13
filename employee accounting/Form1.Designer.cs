@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ShowEmployeBtn = new System.Windows.Forms.Button();
             this.AddEmployee = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.workersDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workersDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ShowEmployeBtn
@@ -69,6 +72,10 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // workersDataBindingSource
+            // 
+            this.workersDataBindingSource.DataSource = typeof(employee_accounting.Models.db.WorkersData);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -82,6 +89,7 @@
             this.Text = "Учет сотрудников";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workersDataBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -91,5 +99,6 @@
         private Button ShowEmployeBtn;
         private Button AddEmployee;
         private DataGridView dataGridView1;
+        private BindingSource workersDataBindingSource;
     }
 }
