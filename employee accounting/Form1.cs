@@ -23,6 +23,8 @@ namespace employee_accounting
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            selectSearchType.Items.Add("По имени");
+            selectSearchType.Items.Add("По табельному номеру");
             dbContext = new AppDbContext();
             dbContext.Database.EnsureCreated();
             dbContext.WorkersData.Load();
@@ -87,14 +89,20 @@ namespace employee_accounting
 
         private void searchByNameText_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource= dbContext.WorkersData.Where(w => w.Name.Contains(searchByNameText.Text)).ToList();
-            dataGridView1.Refresh();
-        }
-
-        private void searchByNumberText_TextChanged(object sender, EventArgs e)
-        {
-            dataGridView1.DataSource = dbContext.WorkersData.Where(w => w.EmployeeNumber.ToString().Contains(searchByNumberText.Text)).ToList();
-            dataGridView1.Refresh();
+            switch (selectSearchType.SelectedItem)
+            {
+                case "По имени":
+                    dataGridView1.DataSource = dbContext.WorkersData.Where(w => w.Name.Contains(searchText.Text)).ToList();
+                    dataGridView1.Refresh();
+                    break;
+                case "По табельному номеру":
+                    dataGridView1.DataSource = dbContext.WorkersData.Where(w => w.EmployeeNumber.ToString().Contains(searchText.Text)).ToList();
+                    dataGridView1.Refresh();
+                    break;
+                default:
+                    MessageBox.Show("Необходимо выбрать тип поиска");
+                    break;
+            }
         }
     }
 }

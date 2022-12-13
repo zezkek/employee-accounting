@@ -42,10 +42,9 @@
             this.dismissalDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workersDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SaveChanges = new System.Windows.Forms.Button();
-            this.searchByNameText = new System.Windows.Forms.TextBox();
-            this.search1Text = new System.Windows.Forms.Label();
-            this.search2Text = new System.Windows.Forms.Label();
-            this.searchByNumberText = new System.Windows.Forms.TextBox();
+            this.searchText = new System.Windows.Forms.TextBox();
+            this.selectSearchType = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workersDataBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -177,39 +176,30 @@
             this.SaveChanges.UseVisualStyleBackColor = true;
             this.SaveChanges.Click += new System.EventHandler(this.SaveChanges_Click);
             // 
-            // searchByNameText
+            // searchText
             // 
-            this.searchByNameText.Location = new System.Drawing.Point(12, 466);
-            this.searchByNameText.Name = "searchByNameText";
-            this.searchByNameText.Size = new System.Drawing.Size(393, 23);
-            this.searchByNameText.TabIndex = 4;
-            this.searchByNameText.TextChanged += new System.EventHandler(this.searchByNameText_TextChanged);
+            this.searchText.Location = new System.Drawing.Point(12, 466);
+            this.searchText.Name = "searchText";
+            this.searchText.Size = new System.Drawing.Size(393, 23);
+            this.searchText.TabIndex = 4;
+            this.searchText.TextChanged += new System.EventHandler(this.searchByNameText_TextChanged);
             // 
-            // search1Text
+            // selectSearchType
             // 
-            this.search1Text.AutoSize = true;
-            this.search1Text.Location = new System.Drawing.Point(135, 448);
-            this.search1Text.Name = "search1Text";
-            this.search1Text.Size = new System.Drawing.Size(98, 15);
-            this.search1Text.TabIndex = 5;
-            this.search1Text.Text = "Поиск по имени";
+            this.selectSearchType.FormattingEnabled = true;
+            this.selectSearchType.Location = new System.Drawing.Point(12, 437);
+            this.selectSearchType.Name = "selectSearchType";
+            this.selectSearchType.Size = new System.Drawing.Size(211, 23);
+            this.selectSearchType.TabIndex = 8;
             // 
-            // search2Text
+            // label1
             // 
-            this.search2Text.AutoSize = true;
-            this.search2Text.Location = new System.Drawing.Point(515, 448);
-            this.search2Text.Name = "search2Text";
-            this.search2Text.Size = new System.Drawing.Size(173, 15);
-            this.search2Text.TabIndex = 7;
-            this.search2Text.Text = "Поиск по табельному номеру";
-            // 
-            // searchByNumberText
-            // 
-            this.searchByNumberText.Location = new System.Drawing.Point(411, 466);
-            this.searchByNumberText.Name = "searchByNumberText";
-            this.searchByNumberText.Size = new System.Drawing.Size(393, 23);
-            this.searchByNumberText.TabIndex = 6;
-            this.searchByNumberText.TextChanged += new System.EventHandler(this.searchByNumberText_TextChanged);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(229, 440);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 15);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Фильтр параметра";
             // 
             // MainForm
             // 
@@ -217,10 +207,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1427, 501);
-            this.Controls.Add(this.search2Text);
-            this.Controls.Add(this.searchByNumberText);
-            this.Controls.Add(this.search1Text);
-            this.Controls.Add(this.searchByNameText);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.selectSearchType);
+            this.Controls.Add(this.searchText);
             this.Controls.Add(this.SaveChanges);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.AddEmployee);
@@ -248,9 +237,8 @@
         private DataGridViewTextBoxColumn employmentDateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dismissalDateDataGridViewTextBoxColumn;
         private Button SaveChanges;
-        private TextBox searchByNameText;
-        private Label search1Text;
-        private Label search2Text;
-        private TextBox searchByNumberText;
+        private TextBox searchText;
+        private ComboBox selectSearchType;
+        private Label label1;
     }
 }
