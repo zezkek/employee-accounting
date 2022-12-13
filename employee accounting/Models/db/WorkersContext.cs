@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using System.Data.SqlClient;
 
 namespace employee_accounting.Models.db;
 
@@ -15,14 +16,12 @@ public partial class WorkersContext : DbContext
     {
     }
 
-    public virtual DbSet<WorkersDatum> WorkersData { get; set; }
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseSqlServer("Server=.;Database=Workers;Trusted_Connection=True; Encrypt=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<WorkersDatum>(entity =>
+        modelBuilder.Entity<WorkersData>(entity =>
         {
             entity.ToTable("Workers_Data");
 
@@ -44,6 +43,6 @@ public partial class WorkersContext : DbContext
 
         OnModelCreatingPartial(modelBuilder);
     }
-
+    public DbSet<WorkersData> WorkersData { get; set; }
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
