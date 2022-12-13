@@ -20,7 +20,7 @@ public partial class AppDbContext : DbContext
         {
             entity.ToTable("Workers_Data");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).HasDefaultValueSql();
             entity.Property(e => e.DismissalDate).HasColumnType("date");
             entity.Property(e => e.Email)
                 .HasMaxLength(50)
