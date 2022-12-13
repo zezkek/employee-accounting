@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ShowEmployeBtn = new System.Windows.Forms.Button();
             this.AddEmployee = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,25 +41,18 @@
             this.employmentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dismissalDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workersDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.workersDataBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.SaveChanges = new System.Windows.Forms.Button();
+            this.searchByNameText = new System.Windows.Forms.TextBox();
+            this.search1Text = new System.Windows.Forms.Label();
+            this.search2Text = new System.Windows.Forms.Label();
+            this.searchByNumberText = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workersDataBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workersDataBindingSource1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ShowEmployeBtn
-            // 
-            this.ShowEmployeBtn.Location = new System.Drawing.Point(12, 12);
-            this.ShowEmployeBtn.Name = "ShowEmployeBtn";
-            this.ShowEmployeBtn.Size = new System.Drawing.Size(205, 23);
-            this.ShowEmployeBtn.TabIndex = 0;
-            this.ShowEmployeBtn.Text = "Показать список сотрудников";
-            this.ShowEmployeBtn.UseVisualStyleBackColor = true;
             // 
             // AddEmployee
             // 
-            this.AddEmployee.Location = new System.Drawing.Point(223, 12);
+            this.AddEmployee.Location = new System.Drawing.Point(12, 12);
             this.AddEmployee.Name = "AddEmployee";
             this.AddEmployee.Size = new System.Drawing.Size(143, 23);
             this.AddEmployee.TabIndex = 1;
@@ -175,10 +167,6 @@
             // 
             this.workersDataBindingSource.DataSource = typeof(employee_accounting.Models.db.WorkersData);
             // 
-            // workersDataBindingSource1
-            // 
-            this.workersDataBindingSource1.DataSource = typeof(employee_accounting.Models.db.WorkersData);
-            // 
             // SaveChanges
             // 
             this.SaveChanges.Location = new System.Drawing.Point(1267, 12);
@@ -189,29 +177,64 @@
             this.SaveChanges.UseVisualStyleBackColor = true;
             this.SaveChanges.Click += new System.EventHandler(this.SaveChanges_Click);
             // 
+            // searchByNameText
+            // 
+            this.searchByNameText.Location = new System.Drawing.Point(12, 466);
+            this.searchByNameText.Name = "searchByNameText";
+            this.searchByNameText.Size = new System.Drawing.Size(393, 23);
+            this.searchByNameText.TabIndex = 4;
+            this.searchByNameText.TextChanged += new System.EventHandler(this.searchByNameText_TextChanged);
+            // 
+            // search1Text
+            // 
+            this.search1Text.AutoSize = true;
+            this.search1Text.Location = new System.Drawing.Point(135, 448);
+            this.search1Text.Name = "search1Text";
+            this.search1Text.Size = new System.Drawing.Size(98, 15);
+            this.search1Text.TabIndex = 5;
+            this.search1Text.Text = "Поиск по имени";
+            // 
+            // search2Text
+            // 
+            this.search2Text.AutoSize = true;
+            this.search2Text.Location = new System.Drawing.Point(515, 448);
+            this.search2Text.Name = "search2Text";
+            this.search2Text.Size = new System.Drawing.Size(173, 15);
+            this.search2Text.TabIndex = 7;
+            this.search2Text.Text = "Поиск по табельному номеру";
+            // 
+            // searchByNumberText
+            // 
+            this.searchByNumberText.Location = new System.Drawing.Point(411, 466);
+            this.searchByNumberText.Name = "searchByNumberText";
+            this.searchByNumberText.Size = new System.Drawing.Size(393, 23);
+            this.searchByNumberText.TabIndex = 6;
+            this.searchByNumberText.TextChanged += new System.EventHandler(this.searchByNumberText_TextChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1427, 501);
+            this.Controls.Add(this.search2Text);
+            this.Controls.Add(this.searchByNumberText);
+            this.Controls.Add(this.search1Text);
+            this.Controls.Add(this.searchByNameText);
             this.Controls.Add(this.SaveChanges);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.AddEmployee);
-            this.Controls.Add(this.ShowEmployeBtn);
             this.Name = "MainForm";
             this.Text = "Учет сотрудников";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.workersDataBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workersDataBindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Button ShowEmployeBtn;
         private Button AddEmployee;
         private DataGridView dataGridView1;
         private BindingSource workersDataBindingSource;
@@ -224,7 +247,10 @@
         private DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn employmentDateDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn dismissalDateDataGridViewTextBoxColumn;
-        private BindingSource workersDataBindingSource1;
         private Button SaveChanges;
+        private TextBox searchByNameText;
+        private Label search1Text;
+        private Label search2Text;
+        private TextBox searchByNumberText;
     }
 }
