@@ -18,7 +18,7 @@ public partial class AppDbContext : DbContext
     {
         modelBuilder.Entity<WorkersData>(entity =>
         {
-            entity.ToTable("Workers_Data");
+            entity.ToTable("WorkersData");
 
             entity.Property(e => e.Id).HasDefaultValueSql();
             entity.Property(e => e.DismissalDate).HasColumnType("date");

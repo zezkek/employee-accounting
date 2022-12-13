@@ -28,6 +28,16 @@ namespace employee_accounting
             dbContext = new AppDbContext();
             dbContext.Database.EnsureCreated();
             dbContext.WorkersData.Load();
+            List<string> itemsBox= new List<string>();
+            foreach (var worker in dbContext.WorkersData)
+            {
+                if (!itemsBox.Contains(worker.SubDivision.Normalize()))
+                {
+                    subFilter.Items.Add(worker.SubDivision.Normalize());
+                    itemsBox.Add(worker.SubDivision.Normalize());
+                }
+            }
+            subFilter.Items.Add(" ");
             dataGridView1.DataSource = dbContext.WorkersData.Local.ToBindingList();
             DataGridViewButtonColumn dissmisEmployee = new DataGridViewButtonColumn();
             dissmisEmployee.Name = "Уволить сотрудника";
@@ -103,6 +113,27 @@ namespace employee_accounting
                     MessageBox.Show("Необходимо выбрать тип поиска");
                     break;
             }
+        }
+
+        private void subFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(subFilter.SelectedItem!=" ")
+            {
+                dataGridView1.DataSource=dbContext.WorkersData.Where(w=>w.SubDivision.Contains(subFilter.SelectedItem.ToString())).ToList();
+                dataGridView1.Refresh();
+            }
+            else
+            {
+                dataGridView1.DataSource = dbContext.WorkersData.ToList();
+                dataGridView1.Refresh();
+            }
+        }
+
+        private void employeeDir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EmployeeDirectory em=new EmployeeDirectory(this, dbContext.WorkersData);
+            em.Show();
         }
     }
 }

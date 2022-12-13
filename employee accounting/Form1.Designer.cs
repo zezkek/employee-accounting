@@ -45,6 +45,9 @@
             this.searchText = new System.Windows.Forms.TextBox();
             this.selectSearchType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.subFilter = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.employeeDir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workersDataBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -201,12 +204,43 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Фильтр параметра";
             // 
+            // subFilter
+            // 
+            this.subFilter.FormattingEnabled = true;
+            this.subFilter.Location = new System.Drawing.Point(411, 466);
+            this.subFilter.Name = "subFilter";
+            this.subFilter.Size = new System.Drawing.Size(211, 23);
+            this.subFilter.TabIndex = 10;
+            this.subFilter.SelectedIndexChanged += new System.EventHandler(this.subFilter_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(441, 445);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(160, 15);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Фильтр по подразделениям";
+            // 
+            // employeeDir
+            // 
+            this.employeeDir.Location = new System.Drawing.Point(932, 465);
+            this.employeeDir.Name = "employeeDir";
+            this.employeeDir.Size = new System.Drawing.Size(180, 23);
+            this.employeeDir.TabIndex = 12;
+            this.employeeDir.Text = "Справочник \"сотрудники\"";
+            this.employeeDir.UseVisualStyleBackColor = true;
+            this.employeeDir.Click += new System.EventHandler(this.employeeDir_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1427, 501);
+            this.Controls.Add(this.employeeDir);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.subFilter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.selectSearchType);
             this.Controls.Add(this.searchText);
@@ -240,5 +274,8 @@
         private TextBox searchText;
         private ComboBox selectSearchType;
         private Label label1;
+        private ComboBox subFilter;
+        private Label label2;
+        private Button employeeDir;
     }
 }
