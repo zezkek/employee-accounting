@@ -184,6 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(666, 162);
             this.Controls.Add(this.jobTitleText);
             this.Controls.Add(this.jobInput);

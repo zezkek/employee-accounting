@@ -18,17 +18,19 @@ namespace employee_accounting
     public partial class AddEmployee : Form
     {
         private MainForm mf;
-        private DbSet<WorkersData> wk;
-
-        public AddEmployee(MainForm mf, DbSet<WorkersData> wk)
+        private AppDbContext app;
+        private DataGridView data;
+        public AddEmployee(MainForm mf, AppDbContext wk, DataGridView data)
         {
             InitializeComponent();
             this.mf = mf;
-            this.wk = wk;
+            app = wk;
+            this.data = data;
         }
 
         private void AddEmployee_FormClosed(object sender, FormClosedEventArgs e)
         {
+            errorValidator.Clear();
             mf.Enabled = true;
         }
         private bool BasicValidator(TextBox txt, CancelEventArgs e)
@@ -142,14 +144,30 @@ namespace employee_accounting
                 WorkersData newWorker = new WorkersData()
                 {
                     Name = nameInput.Text,
+                    IdSubDivision = int.Parse(subdInput.Text),
                     EmployeeNumber = int.Parse(numberInput.Text),
                     JobTitle = jobInput.Text,
-                    SubDivision = subdInput.Text,
                     Email = mailInput.Text,
                     PhoneNumber = phoneInput.Text,
                     EmploymentDate = DateTime.Parse(dateInput.Value.ToShortDateString()),
+                    State = true,
                 };
-                wk.Add(newWorker);
+                app.WorkersData.Add(newWorker);
+                var mainData = app.WorkersData.Local.ToBindingList().Join(app.SubDivisions.Local.ToBindingList(),
+                w => w.IdSubDivision, s => s.Id, (w, s) => new
+                {
+                    Name = w.Name,
+                    EmployeeNumber = w.EmployeeNumber,
+                    JobTitle = w.JobTitle,
+                    SubDiv = s.SubDivisionName,
+                    Email = w.Email,
+                    Phone = w.PhoneNumber,
+                    Employ = w.EmploymentDate,
+                    Dissmiss = w.DismissalDate,
+                    State = w.State,
+                    Id = w.Id
+                }).ToList();
+                data.DataSource= mainData;
                 this.Close();
                 mf.Enabled= true;
             }

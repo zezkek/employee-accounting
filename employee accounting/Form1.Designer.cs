@@ -31,15 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.AddEmployee = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subDivisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employmentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dismissalDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.workersDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SaveChanges = new System.Windows.Forms.Button();
             this.searchText = new System.Windows.Forms.TextBox();
@@ -69,21 +60,9 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.employeeNumberDataGridViewTextBoxColumn,
-            this.jobTitleDataGridViewTextBoxColumn,
-            this.subDivisionDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.phoneNumberDataGridViewTextBoxColumn,
-            this.employmentDateDataGridViewTextBoxColumn,
-            this.dismissalDateDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.workersDataBindingSource;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(12, 41);
             this.dataGridView1.Name = "dataGridView1";
@@ -92,78 +71,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1403, 380);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 42;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 56;
-            // 
-            // employeeNumberDataGridViewTextBoxColumn
-            // 
-            this.employeeNumberDataGridViewTextBoxColumn.DataPropertyName = "EmployeeNumber";
-            this.employeeNumberDataGridViewTextBoxColumn.HeaderText = "Табельный номер";
-            this.employeeNumberDataGridViewTextBoxColumn.Name = "employeeNumberDataGridViewTextBoxColumn";
-            this.employeeNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.employeeNumberDataGridViewTextBoxColumn.Width = 121;
-            // 
-            // jobTitleDataGridViewTextBoxColumn
-            // 
-            this.jobTitleDataGridViewTextBoxColumn.DataPropertyName = "JobTitle";
-            this.jobTitleDataGridViewTextBoxColumn.HeaderText = "Должность";
-            this.jobTitleDataGridViewTextBoxColumn.Name = "jobTitleDataGridViewTextBoxColumn";
-            this.jobTitleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.jobTitleDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // subDivisionDataGridViewTextBoxColumn
-            // 
-            this.subDivisionDataGridViewTextBoxColumn.DataPropertyName = "SubDivision";
-            this.subDivisionDataGridViewTextBoxColumn.HeaderText = "Подразделение";
-            this.subDivisionDataGridViewTextBoxColumn.Name = "subDivisionDataGridViewTextBoxColumn";
-            this.subDivisionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.subDivisionDataGridViewTextBoxColumn.Width = 117;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Почта";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 66;
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Номер телефона";
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.phoneNumberDataGridViewTextBoxColumn.Width = 115;
-            // 
-            // employmentDateDataGridViewTextBoxColumn
-            // 
-            this.employmentDateDataGridViewTextBoxColumn.DataPropertyName = "EmploymentDate";
-            this.employmentDateDataGridViewTextBoxColumn.HeaderText = "Дата приёма";
-            this.employmentDateDataGridViewTextBoxColumn.Name = "employmentDateDataGridViewTextBoxColumn";
-            this.employmentDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.employmentDateDataGridViewTextBoxColumn.Width = 94;
-            // 
-            // dismissalDateDataGridViewTextBoxColumn
-            // 
-            this.dismissalDateDataGridViewTextBoxColumn.DataPropertyName = "DismissalDate";
-            this.dismissalDateDataGridViewTextBoxColumn.HeaderText = "Дата увольнения";
-            this.dismissalDateDataGridViewTextBoxColumn.Name = "dismissalDateDataGridViewTextBoxColumn";
-            this.dismissalDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dismissalDateDataGridViewTextBoxColumn.Width = 115;
             // 
             // workersDataBindingSource
             // 
@@ -226,9 +133,9 @@
             // 
             this.employeeDir.Location = new System.Drawing.Point(932, 465);
             this.employeeDir.Name = "employeeDir";
-            this.employeeDir.Size = new System.Drawing.Size(180, 23);
+            this.employeeDir.Size = new System.Drawing.Size(201, 23);
             this.employeeDir.TabIndex = 12;
-            this.employeeDir.Text = "Справочник \"сотрудники\"";
+            this.employeeDir.Text = "Справочник \"Подразделения\"";
             this.employeeDir.UseVisualStyleBackColor = true;
             this.employeeDir.Click += new System.EventHandler(this.employeeDir_Click);
             // 
@@ -261,15 +168,7 @@
         private Button AddEmployee;
         private DataGridView dataGridView1;
         private BindingSource workersDataBindingSource;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn employeeNumberDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn jobTitleDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn subDivisionDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn employmentDateDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn dismissalDateDataGridViewTextBoxColumn;
         private Button SaveChanges;
         private TextBox searchText;
         private ComboBox selectSearchType;
